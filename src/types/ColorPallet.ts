@@ -2,7 +2,7 @@
 export const ColorPallet={
 
     backGround:{
-        home:"blue",
+        home:"#ECD985",
         shop:"red",
     }
 }

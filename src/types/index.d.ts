@@ -1,0 +1,4 @@
+type Slide = {
+  image: string;
+};
+

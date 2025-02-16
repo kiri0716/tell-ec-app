@@ -8,6 +8,7 @@ type PageTemplateProps = {
 /**
  * ページタイトルを追加するテンプレート
  * 各ページテンプレートのpropsに「& React.ComponentProps<typeof PageTemplate>」を追加して、PageTemplateタグを囲んで使用する。
+ * @param titleLabel タブに表示される文字
  */
 
 export const PageTemplate = memo<PageTemplateProps>(
