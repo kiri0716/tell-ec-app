@@ -1,35 +1,48 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Carousel } from "../../../components/Carousel";
+import { ListView } from "../../../components/Listview";
 
 /**
  * ホーム画面（初期表示画面）
- * 
+ *
  */
 const slides = [
-  { image: "/23.png" },
-  { image: "/33.jpg" },
-  { image: "/44.png" },
-  { image: "/33.jpg" },
-  { image: "/44.png" },
-  { image: "/33.jpg" },
-  { image: "/44.png" },
+  { image: "/23.png" ,link:"https://www.kirby.jp/"},
+  { image: "/33.jpg" ,link:"https://www.kirby.jp/"},
+  { image: "/44.png" ,link:"https://www.kirby.jp/"},
+  { image: "/33.jpg" ,link:"https://www.kirby.jp/"},
+  { image: "/44.png" ,link:"https://www.kirby.jp/"},
+  { image: "/33.jpg" ,link:"https://www.kirby.jp/"},
+  { image: "/44.png" ,link:"https://www.kirby.jp/"},
 ];
 
-  export const Home = () => {
+const testData = ["aaaaaaa", "bbbbbbbb", "ccccccc","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaa"];
 
+export const Home = () => {
   return (
-    <>
-    <div css={css({height:"120px"})}><Carousel  slides={slides}/></div>
-      <div css={styles.root}>
-
+    <div css={styles.root}>
+      <div>
+        <Carousel slides={slides} />
       </div>
-    </>
+      <div css ={styles.listView}>
+        <ListView textList={testData} />
+      </div>
+    </div>
   );
 };
 
 const styles = {
   root: css({
-    fontSize: "100px",
+    width:"100%",
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center",
   }),
+  listView:css({
+    width:"50%",
+    height:"100%",
+    marginTop:"50px"
+  })
 };

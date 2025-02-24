@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useEffect, useState } from "react";
+import { Indicator } from "./Indicator";
 
 type carouselProps = {
   slides: Slide[];
@@ -19,7 +20,7 @@ export const Carousel: React.FC<carouselProps> = ({
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
-    skipSnaps:false,
+    skipSnaps: false,
   });
 
   // 現在のスライドインデックス
@@ -28,14 +29,14 @@ export const Carousel: React.FC<carouselProps> = ({
   // スライドの変更時にインデックスを更新
   useEffect(() => {
     if (!emblaApi) return;
-  
+
     const onSelect = () => {
       setCurrentIndex(emblaApi.selectedScrollSnap());
     };
-  
+
     emblaApi.on("select", onSelect);
     onSelect(); // 初期インデックスを設定
-  
+
     // クリーンアップ処理: off メソッドの引数はイベントリスナー関数
     return () => {
       emblaApi.off("select", onSelect);
@@ -54,24 +55,37 @@ export const Carousel: React.FC<carouselProps> = ({
     return () => clearInterval(interval);
   }, [emblaApi]);
 
-return (
-    <div css={styles.carouselWrapper}>
-      <div ref={emblaRef} css={styles.carouselContainer}>
-        <div css={styles.carouselTrack}>
-          {slides.map((slide, index) => {
-            const opacity = currentIndex === index ? 1 : 0.4;  // 現在のスライドの透明度は1、前後のスライドは0.5
-            return (
-              <div key={index} css={styles.slideItem}>
-                <img
-                  src={slide.image}
-                  alt={`slide ${index}`}
-                  css={[styles.slideImage, { opacity: opacity }]}
-                />
-              </div>
-            );
-          })}
+  return (
+    <div>
+      <div css={styles.carouselWrapper}>
+        <div ref={emblaRef} css={styles.carouselContainer}>
+          <div css={styles.carouselTrack}>
+            {slides.map((slide, index) => {
+              const opacity = currentIndex === index ? 1 : 0.4;
+              return (
+                <div key={index} css={styles.slideItem}>
+                  {slide.link ? (
+                    <a href={slide.link} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={slide.image}
+                        alt={`slide ${index}`}
+                        css={[styles.slideImage, { opacity: opacity }]}
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={slide.image}
+                      alt={`slide ${index}`}
+                      css={[styles.slideImage, { opacity: opacity }]}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
+      <Indicator currentIndex={currentIndex} slides={slides} />
     </div>
   );
 };
@@ -90,9 +104,9 @@ const styles = {
     display: "flex",
   }),
   slideItem: css({
-    flex: "0 0 auto",  // 各スライドの幅を自動調整
-    width: "50%",      // 幅を少し縮めて隣のスライドが見えるように
-    margin: "0 40px",  // スライド間に少しスペースを追加
+    flex: "0 0 auto", // 各スライドの幅を自動調整
+    width: "50%", // 幅を少し縮めて隣のスライドが見えるように
+    margin: "0 10px", // スライド間に少しスペースを追加
   }),
   slideImage: css({
     width: "100%",
