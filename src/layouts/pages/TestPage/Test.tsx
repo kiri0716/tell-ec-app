@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Normalbutton } from "../../../components/Button/NormalButton";
 
 function Test() {
   const styles = {
@@ -11,7 +10,7 @@ function Test() {
   return (
     <>
       <div css={styles.root}>
-        <Normalbutton>test</Normalbutton>
+        
       </div>
     </>
   );

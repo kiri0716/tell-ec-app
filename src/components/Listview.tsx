@@ -25,7 +25,7 @@ export const ListView: FC<ListViewProps> = ({
 const styles = {
   base: css({
     width: "100%",
-    borderRadius: "4px",
+    borderRadius: "10px",
     border: "1px solid #ccc",
     overflowY: "scroll", // スクロールを有効にする
     height: "80px", // 高さを2行分に設定

@@ -2,6 +2,7 @@
 import { css } from "@emotion/react";
 import { Carousel } from "../../../components/Carousel";
 import { ListView } from "../../../components/Listview";
+import { Button } from "../../../components/Button/Button";
 
 /**
  * ホーム画面（初期表示画面）
@@ -28,6 +29,10 @@ export const Home = () => {
       <div css ={styles.listView}>
         <ListView textList={testData} />
       </div>
+      <div css={css({width:"50%",display:"flex",justifyContent:"space-between"})}>      <div><Button size="large">large</Button></div>
+      <div><Button>medium</Button></div></div>
+
+
     </div>
   );
 };
