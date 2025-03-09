@@ -1,6 +1,6 @@
 import { ComponentProps, memo } from "react";
-import { PageTemplate } from "../../templates/PageTemplate";
-import { Header } from "../../templates/Header";
+import { PageTemplate } from "./PageTemplate";
+import { Header } from "./Header";
 
 type HomePageTemplateProps = {} & ComponentProps<typeof PageTemplate>;
 

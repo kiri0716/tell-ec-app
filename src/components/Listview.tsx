@@ -44,5 +44,12 @@ const styles = {
     paddingLeft: "10px",
     lineHeight: "40px", // 行の高さを調整（見た目上の高さ）
     whiteSpace: "nowrap", // 改行を防止
+    // タブレット向け設定
+    "@media (max-width: 1024px)": {
+      fontSize: "20px",
+    },
+    "@media (max-width: 600px)": {
+      fontSize: "12px",
+    },
   }),
 };

@@ -20,7 +20,7 @@ type HeaderProps = {
 
 export const Header = React.memo<HeaderProps>(
   ({
-    title = "ハンドメイド工房 tell (logo)",
+    title = "ハンドメイド工房 tell (logo)",// ReactNodeに変更予定
     fontSize = "18px",
     headerType="home"
   }: HeaderProps) => {

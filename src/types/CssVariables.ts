@@ -6,13 +6,13 @@ export const CssVariables = {
   button: {
     width: {
       small: "",
-      medium: "269px",
-      large: "386px",
+      medium: "350px",
+      large: "350px",
     },
     height: {
       small: "",
-      medium: "269px",
-      large: "217px",
+      medium: "263px",
+      large: "263px",
     },
   },
 };

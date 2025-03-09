@@ -1,5 +1,5 @@
-import { HomePageTemplate } from "./HomePageTemplate";
-import { Home } from "./Home";
+import { HomePageTemplate } from "../../templates/HomePageTemplate";
+import { Home } from "../../../features/homePage/Home";
 
 const HomePage = () => {
   return (
