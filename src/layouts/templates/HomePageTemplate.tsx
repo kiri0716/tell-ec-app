@@ -7,7 +7,6 @@ type HomePageTemplateProps = {} & ComponentProps<typeof PageTemplate>;
 /**
  * ホーム画面のテンプレート
  */
-
 export const HomePageTemplate = memo<HomePageTemplateProps>(
   ({ children }: HomePageTemplateProps) => {
     return (

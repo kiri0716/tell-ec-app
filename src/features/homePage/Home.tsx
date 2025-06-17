@@ -19,14 +19,39 @@ const slides = [
   { image: "/33.jpg", link: "https://www.kirby.jp/" },
   { image: "/44.png", link: "https://www.kirby.jp/" },
 ];
+type News = {
+  id: string
+  title: string
+  body: string
+  date: string
+}
 
-const testData = [
-  "aaaaaaa",
-  "bbbbbbbb",
-  "ccccccc",
-  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-  "aaaaaaaaaaaaaaaaaaaaaaaaaa",
-];
+const dummyNews: News[] = [
+  {
+    id: '1',
+    title: '新作アクセサリー追加しました',
+    body: '本日より新しい天然石のピアスが公開されました。',
+    date: '2025/06/17',
+  },
+  {
+    id: '2',
+    title: 'メルカリにてセール開催中',
+    body: '一部商品が期間限定でお得に！',
+    date: '2025/06/15',
+  },
+    {
+    id: '3',
+    title: '新作アクセサリー追加しました',
+    body: '本日より新しい天然石のピアスが公開されました。',
+    date: '2025/06/17',
+  },
+  {
+    id: '4',
+    title: 'メルカリにてセール開催中',
+    body: '一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！',
+    date: '2025/06/15',
+  },
+]
 
 const specialFeatures = [
   {
@@ -49,7 +74,7 @@ export const Home = () => {
         <Carousel slides={slides} />
       </div>
       <div css={styles.listView}>
-        <ListView textList={testData} />
+        <ListView newsList={dummyNews} />
       </div>
       <div
         css={css({

@@ -2,54 +2,68 @@
 import { css } from "@emotion/react";
 import { FC } from "react";
 
+type News = {
+  id: string;
+  title: string;
+  body: string;
+  date: string;
+};
 type ListViewProps = {
-  textList?: string[];
+  newsList?: News[];
 };
 
-export const ListView: FC<ListViewProps> = ({
-  textList = [],
-}: ListViewProps) => {
+export const ListView: FC<ListViewProps> = ({ newsList = [] }) => {
   return (
     <div css={styles.base}>
-      {textList.map((text) => {
-        return (
-          <div key={text} css={styles.text}>
-            {text}
-          </div>
-        );
-      })}
+      {newsList.map((news) => (
+        <div key={news.id} css={styles.item}>
+          <div css={styles.date}>{news.date}</div>
+          <div css={styles.title}>{news.title}</div>
+          <div css={styles.body}>{news.body}</div>
+        </div>
+      ))}
     </div>
   );
 };
 
 const styles = {
-  base: css({
-    width: "100%",
-    borderRadius: "10px",
+base: css({
+  maxHeight: "180px",
+  overflowY: "auto",
+  paddingRight: "4px",
+  "&::-webkit-scrollbar": {
+    width: "4px",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "#ccc",
+    borderRadius: "4px",
+  },
+}),
+  item: css({
+    padding: "12px",
+    background: "#f9f9f9",
     border: "1px solid #ccc",
-    overflowY: "scroll", // スクロールを有効にする
-    height: "80px", // 高さを2行分に設定
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    /* スクロールバーを非表示にする */
-    "&::-webkit-scrollbar": {
-      display: "none", // スクロールバーを非表示にする
-    },
+    borderRadius: "8px",
+    marginBottom: "12px",
   }),
-  text: css({
-    width: "90%",
-    fontSize: "20px", // フォントサイズ
-    borderBottom: "1px solid #ccc",
-    paddingLeft: "10px",
-    lineHeight: "40px", // 行の高さを調整（見た目上の高さ）
-    whiteSpace: "nowrap", // 改行を防止
-    // タブレット向け設定
-    "@media (max-width: 1024px)": {
-      fontSize: "20px",
-    },
+  date: css({
+    fontSize: "14px",
+    color: "#888",
+  }),
+  title: css({
+    fontSize: "16px",
+    fontWeight: "bold",
+    marginTop: "4px",
+  }),
+  body: css({
+    fontSize: "14px",
+    marginTop: "4px",
+    lineHeight: "1.5",
+    whiteSpace: "normal", // 改行を許可
+    maxHeight: "200px",
+    overflowY: "auto",
     "@media (max-width: 600px)": {
-      fontSize: "12px",
+      maxHeight: "140px",
     },
   }),
 };
