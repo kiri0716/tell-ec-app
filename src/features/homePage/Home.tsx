@@ -60,27 +60,6 @@ export const Home = () => {
       >
         <NewItemsList newItemsData={specialFeatures} />
       </div>
-      {/* <div
-        css={css({
-          width: "50%",
-          display: "flex",
-          justifyContent: "space-between",
-        })}
-      >
-        <div>
-          <Button size="large" imageUrl="44.png" textBoxHeight={"70px"}>
-            large
-          </Button>
-        </div>
-        <div>
-          <CircleButton imageUrl="44.png" />
-        </div>
-        <div>
-          <Button imageUrl="44.png" textBoxHeight={"70px"}>
-            medium
-          </Button>
-        </div>
-      </div> */}
     </div>
   );
 };
