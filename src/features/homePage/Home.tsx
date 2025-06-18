@@ -1,9 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Carousel } from "../../components/Carousel";
-import { ListView } from "../../components/Listview";
-import { Button } from "../../components/Button/Button";
-import { CircleButton } from "../../components/Button/CircleButton";
+import { ListView } from "../../components/NewsListview";
 import { NewItemsList } from "./NewItemsList";
 
 /**
@@ -28,30 +25,30 @@ type News = {
 
 const dummyNews: News[] = [
   {
-    id: '1',
-    title: '新作アクセサリー追加しました',
-    body: '本日より新しい天然石のピアスが公開されました。',
-    date: '2025/06/17',
+    id: "1",
+    title: "新作アクセサリー追加しました",
+    body: "本日より新しい天然石のピアスが公開されました。",
+    date: "2025/06/17",
   },
   {
-    id: '2',
-    title: 'メルカリにてセール開催中',
-    body: '一部商品が期間限定でお得に！',
-    date: '2025/06/15',
-  },
-    {
-    id: '3',
-    title: '新作アクセサリー追加しました',
-    body: '本日より新しい天然石のピアスが公開されました。',
-    date: '2025/06/17',
+    id: "2",
+    title: "メルカリにてセール開催中",
+    body: "一部商品が期間限定でお得に！",
+    date: "2025/06/15",
   },
   {
-    id: '4',
-    title: 'メルカリにてセール開催中',
-    body: '一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！一部商品が期間限定でお得に！',
-    date: '2025/06/15',
+    id: "3",
+    title: "再入荷のお知らせ",
+    body: "人気のアイテムが再入荷しました。",
+    date: "2025/06/14",
   },
-]
+  {
+    id: "4",
+    title: "お知らせ",
+    body: "新しいイベントを予定しています。",
+    date: "2025/06/12",
+  },
+];
 
 const specialFeatures = [
   {
@@ -60,13 +57,37 @@ const specialFeatures = [
     label: "ポケモン",
     price: 500,
   },
-  { onClick: () => alert("Feature 2 clicked"), imageUrl: "IMG_4539.jpg" },
-  { onClick: () => alert("Feature 3 clicked"), imageUrl: "IMG_4538.jpg" },
-  { onClick: () => alert("Feature 4 clicked"), imageUrl: "IMG_4539.jpg" },
-  { onClick: () => alert("Feature 5 clicked"), imageUrl: "IMG_4538.jpg" },
-  { onClick: () => alert("Feature 6 clicked"), imageUrl: "IMG_4539.jpg" },
+  {
+    onClick: () => alert("Feature 2 clicked"),
+    imageUrl: "IMG_4539.jpg",
+    label: "キーホルダー",
+    price: 650,
+  },
+  {
+    onClick: () => alert("Feature 3 clicked"),
+    imageUrl: "IMG_4538.jpg",
+    label: "天然石ピアス",
+    price: 1200,
+  },
+  {
+    onClick: () => alert("Feature 4 clicked"),
+    imageUrl: "IMG_4539.jpg",
+    label: "ビーズリング",
+    price: 800,
+  },
+  {
+    onClick: () => alert("Feature 5 clicked"),
+    imageUrl: "IMG_4538.jpg",
+    label: "レザーケース",
+    price: 1500,
+  },
+  {
+    onClick: () => alert("Feature 6 clicked"),
+    imageUrl: "IMG_4539.jpg",
+    label: "手作りネックレス",
+    price: 1350,
+  },
 ];
-
 export const Home = () => {
   return (
     <div css={styles.root}>
@@ -97,9 +118,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
   }),
-  listView: css({
-    width: "50%",
-    height: "100%",
-    marginTop: "50px",
-  }),
+listView: css({
+  width: "100%",
+  maxWidth: "800px", // 適度な中央寄せ幅（必要なら）
+  padding: "0 16px", // スマホ時に端にくっつかないように
+  margin: "50px auto 0", // 上マージン＋中央寄せ
+  boxSizing: "border-box",
+}),
 };
