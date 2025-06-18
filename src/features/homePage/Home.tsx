@@ -1,7 +1,9 @@
 import { css } from "@emotion/react";
 import { Carousel } from "../../components/Carousel";
-import { ListView } from "../../components/NewsListview";
+import { ListView } from "./NewsListview";
 import { NewItemsList } from "./NewItemsList";
+
+//todo あとでコンテナ、ディスプレイに分ける
 
 /**
  * ホーム画面（初期表示画面）

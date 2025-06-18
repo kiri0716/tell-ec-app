@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import React, { ReactNode } from "react";
-import { ColorPallet } from "../../types/ColorPallet";
-import { CssVariables } from "../../types/CssVariables";
-import { PageType } from "../../types/Enum";
+import { ColorPallet } from "../types/ColorPallet";
+import { CssVariables } from "../types/CssVariables";
+import { PageType } from "../types/Enum";
 import { useNavigate } from "react-router-dom";
 
 type HeaderProps = {

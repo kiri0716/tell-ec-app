@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 
 import NotFound from "./NotFound";
-import Test from "../layouts/pages/TestPage/Test";
-import HomePage from "../layouts/pages/HomePage";
+import Test from "../pages/TestPage/Test";
+import HomePage from "../pages/HomePage";
 
 const routes = [
   {

@@ -1,5 +1,5 @@
 import { HomePageTemplate } from "../../templates/HomePageTemplate";
-import { Home } from "../../../features/homePage/Home";
+import { Home } from "../../features/homePage/Home";
 
 const HomePage = () => {
   return (
