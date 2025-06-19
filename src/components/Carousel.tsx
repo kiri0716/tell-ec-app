@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import useEmblaCarousel from "embla-carousel-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Indicator } from "./Indicator";
 
 type carouselProps = {
@@ -14,9 +13,7 @@ type carouselProps = {
  * @returns
  */
 
-export const Carousel: React.FC<carouselProps> = ({
-  slides,
-}: carouselProps) => {
+export const Carousel = ({ slides }: carouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
@@ -65,7 +62,11 @@ export const Carousel: React.FC<carouselProps> = ({
               return (
                 <div key={index} css={styles.slideItem}>
                   {slide.link ? (
-                    <a href={slide.link} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={slide.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img
                         src={slide.image}
                         alt={`slide ${index}`}
@@ -104,14 +105,14 @@ const styles = {
     display: "flex",
   }),
   slideItem: css({
-    flex: "0 0 auto", // 各スライドの幅を自動調整
-    width: "50%", // 幅を少し縮めて隣のスライドが見えるように
-    margin: "0 10px", // スライド間に少しスペースを追加
+    flex: "0 0 auto",
+    width: "50%",
+    margin: "0 10px",
   }),
   slideImage: css({
     width: "100%",
     height: "auto",
     objectFit: "cover",
-    transition: "opacity 0.5s ease", // opacityの変更にアニメーションを追加
+    transition: "opacity 0.5s ease",
   }),
 };

@@ -1,6 +1,4 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { FC } from "react";
 
 type News = {
   id: string;
@@ -13,7 +11,7 @@ type ListViewProps = {
   newsList?: News[];
 };
 
-export const ListView: FC<ListViewProps> = ({ newsList = [] }) => {
+export const ListView = ({ newsList = [] }:ListViewProps) => {
   return (
     <div css={styles.container}>
       {newsList.map((news) => (

@@ -1,5 +1,8 @@
 import { memo } from "react"
 import { css } from "@emotion/react"
+import { ItemCard } from "../../components/Button/ItemCard"
+
+//todo 共通化検討 商品表示系をこのコンポーネントで行う
 
 type NewItem = {
   onClick?: () => void
@@ -18,13 +21,7 @@ export const NewItemsList = memo<NewItemsListProps>(({ newItemsData }) => {
       <div css={styles.title}>🆕 新商品</div>
       <div css={styles.grid}>
         {newItemsData.map((item, index) => (
-          <div key={index} css={styles.card} onClick={item.onClick}>
-            <img src={item.imageUrl} alt={item.label} css={styles.image} />
-            <div css={styles.info}>
-              <div css={styles.label}>{item.label}</div>
-              <div css={styles.price}>{item.price}円</div>
-            </div>
-          </div>
+          <ItemCard key={index} imageUrl={item.imageUrl} label={item.label} onClick={item.onClick} price={item.price}/>
         ))}
       </div>
     </div>

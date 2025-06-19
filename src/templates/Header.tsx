@@ -25,9 +25,15 @@ export const Header = React.memo<HeaderProps>(
           {title}
         </div>
         <div css={styles.nav}>
-          <div css={styles.navItem} onClick={() => navigate("/items")}>全商品</div>
-          <div css={styles.navItem} onClick={() => navigate("/category")}>○○○</div>
-          <div css={styles.navItem} onClick={() => navigate("/news")}>○○○</div>
+          <div css={styles.navItem} onClick={() => navigate("/items")}>
+            全商品
+          </div>
+          <div css={styles.navItem} onClick={() => navigate("/category")}>
+            ○○○
+          </div>
+          <div css={styles.navItem} onClick={() => navigate("/news")}>
+            ○○○
+          </div>
         </div>
       </div>
     );

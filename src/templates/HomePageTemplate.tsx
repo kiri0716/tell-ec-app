@@ -1,6 +1,7 @@
 import { ComponentProps, memo } from "react";
 import { PageTemplate } from "./PageTemplate";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 type HomePageTemplateProps = {} & ComponentProps<typeof PageTemplate>;
 
@@ -13,6 +14,7 @@ export const HomePageTemplate = memo<HomePageTemplateProps>(
       <PageTemplate>
         <Header headerType={"home"} />
         {children}
+        <Footer/>
       </PageTemplate>
     );
   }

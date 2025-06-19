@@ -1,5 +1,3 @@
-
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
 type IndicatorProps = {
@@ -7,13 +5,16 @@ type IndicatorProps = {
   currentIndex: number;
 };
 
-export const Indicator: React.FC<IndicatorProps> = ({ slides, currentIndex }) => {
+export const Indicator = ({ slides, currentIndex }: IndicatorProps) => {
   return (
     <div css={styles.indicatorWrapper}>
       {slides.map((_, index) => (
         <div
           key={index}
-          css={[styles.indicator, currentIndex === index && styles.activeIndicator]}
+          css={[
+            styles.indicator,
+            currentIndex === index && styles.activeIndicator,
+          ]}
         />
       ))}
     </div>
